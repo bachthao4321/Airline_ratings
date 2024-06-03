@@ -94,9 +94,9 @@ with col4:
 
 # Function to load scaler and model
 def load_scaler_model():
-    with open(r'model.pkl') as file:
+    with open(r'D:\Bach Thao\DBM302m\airline_ratings\scaler.pkl') as file:
         scaler = pickle.load(file)
-    with open(r'scaler.pkl', 'rb') as f:
+    with open(r'D:\Bach Thao\DBM302m\airline_ratings\model.pkl', 'rb') as f:
         model = pickle.load(f)
     return scaler, model
 
