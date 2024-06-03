@@ -2,11 +2,10 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import plotly.express as px
-import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
 import sklearn
-import pyodbc
+# import pyodbc
 
 
 # @st.cache_resource
@@ -39,7 +38,7 @@ st.image('R.jpg')
 
 # Apply the selected theme
 
-st.page_link("Home_🏡.py", label="Home", icon="🏠")
+st.page_link("Home.py", label="Home", icon="🏠")
 st.page_link("pages/Data_📑.py", label="Data", icon="📚")
 st.page_link("pages/Dashboard_📊.py", label="Dashboard", icon="1️⃣")
 st.page_link("pages/Model_🤖.py", label="Model", icon="2️⃣")

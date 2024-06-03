@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import plotly.express as px
-import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
 import sklearn
@@ -95,9 +94,9 @@ with col4:
 
 # Function to load scaler and model
 def load_scaler_model():
-    with open(r'D:\Bach Thao\DBM302m\airline_ratings\scaler.pkl', 'rb') as file:
+    with open(r'model.pkl') as file:
         scaler = pickle.load(file)
-    with open(r'D:\Bach Thao\DBM302m\airline_ratings\model.pkl', 'rb') as f:
+    with open(r'scaler.pkl', 'rb') as f:
         model = pickle.load(f)
     return scaler, model
 
@@ -164,6 +163,6 @@ if st.button("Submit"):
     
     st.subheader('Result:')
     if result[0] == 0:
-        st.write('Dissatisfaction')
+        st.write('Disatisfaction')
     else:
         st.write('Satisfaction')
