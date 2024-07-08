@@ -3,8 +3,7 @@ import pandas as pd
 import altair as alt
 import plotly.express as px
 import matplotlib.pyplot as plt
-import pickle
-import sklearn
+import seaborn as sns
 
 st.set_page_config(page_title="Dashboard", page_icon="📈")
 # Load the dataset
@@ -14,20 +13,6 @@ def load_data():
     return data
 
 data = load_data()
-
-
-# Filter and display data by customer type
-# st.subheader("Filter by Customer Type and Gender")
-# customer_types = data['Customer Type'].unique()
-# selected_customer_type = st.selectbox("Select a Customer Type", customer_types)
-# genders = data['Gender'].unique()
-# selected_gender = st.selectbox("Select Gender", genders)
-# filtered_data = data[(data['Customer Type'] == selected_customer_type) & (data['Gender'] == selected_gender)]
-# st.dataframe(filtered_data)
-
-# Display summary of filtered data
-# st.subheader(f"Summary of {selected_customer_type} and {selected_gender}")
-# st.write(filtered_data.describe())
 
 # Add Altair charts
 st.title("Visualizations")
@@ -113,10 +98,9 @@ st.altair_chart(distance_chart, use_container_width=True)
 # Correlation Heatmap
 st.write("### Correlation Heatmap")
 
-# Correlation Heatmap
 numeric_data = data.select_dtypes(include=['float64', 'int64'])
-fig, ax = plt.subplots(figsize=(10, 8))  # Create a figure and axis
-sns.heatmap(numeric_data.corr(), annot=True, cmap='coolwarm', fmt=".2f", ax=ax)  # Plot heatmap on the axis
-st.pyplot(fig)  # Display the figure using st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 8))  
+sns.heatmap(numeric_data.corr(), annot=True, cmap='coolwarm', fmt=".2f", ax=ax)  
+st.pyplot(fig)  
 
 
